@@ -1,9 +1,10 @@
 # MessageStats
 
 NOTE:  Thanks to Neil Johnson, who maintained the article and the script for years!
+
 NOTE:  Thanks to Josh Bryant, this script has now been updated to collect data from Exchange 2007, 2010 and 2013 servers.  
-       I have updated the link in this article to point to the new script - thanks Josh!
-NOTE:  And finally thanks to Rob Campbell who has written the script
+        
+NOTE:  And finally thanks to Rob Campbell who has written the script.
 
 
 One of the nice things since Exchange 2007 is that we can interrogate the message tracking logs via PowerShell.  
