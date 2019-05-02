@@ -109,7 +109,7 @@ process {
     $_
     }
 end {
-	write-host “`rProcessed $i log records in $($timer.elapsed.totalseconds) seconds”
+	write-host "`rProcessed $i log records in $($timer.elapsed.totalseconds) seconds"
 	Write-Host "   Average rate: $([int]($i/$timer.elapsed.totalseconds)) log recs/sec."
 	}
 }
