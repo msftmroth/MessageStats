@@ -65,11 +65,14 @@ DL usage stats file is DL_stats.csv
 Outout will be in the same directory:
 
 CSV file with the Mailbox stats data:
+```
 email_stats_YYYY_MM_DD.csv
+```
 
 CSV file with the Distribution List stats data:
+```
 DL_stats.csv
-
+```
 
 ## Built With
 
@@ -88,9 +91,4 @@ See also the list of [contributors](https://github.com/msftmroth/MessageStats) w
 * Updated by **mjolinor** - 02/24/2011
 * Updated by **Josh M. Bryant** - 10/8/2014 - to work with Exchange 2013
 * Moved to github and fixed some stuff by **Marco Roth** - 04/04/2019 
-
-
-
-
-
 

@@ -1,6 +1,7 @@
 ###############################################################################
 #
-#  Written by mjolinor 02/24/2011
+#  Written by **Rob Campbell** - 03/02/2011 - https://devblogs.microsoft.com/scripting/use-powershell-to-track-email-messages-in-exchange-server/
+#  Updated by **mjolinor** - 02/24/2011
 #  Updated by Josh M. Bryant 10/8/2014 to work with Exchange 2013
 #  Fixed some stuff by MRoth 04/04/2019 
 #
@@ -13,8 +14,17 @@
 
 #requires -version 2.0
 
+param(
+    # Days to analyze in the past  
+    [Parameter(	Mandatory=$false,
+				Position = 0,
+				HelpMessage = "Days to analyze in the past (Default 1 (Yesterday) 2 the day before yesterday and so on... )")]
+	[ValidatePattern("[0-9]")]
+    [int] $AnalyzeDay = 1
+	)
+
 $today = get-date
-$rundate = $($today.adddays(-1)).toshortdatestring()
+$rundate = $($today.adddays(-$AnalyzeDay)).toshortdatestring()
 
 $outfile_date = ([datetime]$rundate).tostring("yyyy_MM_dd")
 $outfile = "email_stats_" + $outfile_date + ".csv"
