@@ -109,7 +109,7 @@ param ($increment  = 1000)
 begin{$i=0;$timer = [diagnostics.stopwatch]::startnew()}
 process {
     $i++
-    if (!($i % $increment)){Write-host “`rProcessed $i in $($timer.elapsed.totalseconds) seconds” -nonewline}
+    if (!($i % $increment)){Write-host "`rProcessed $i in $($timer.elapsed.totalseconds) seconds" -nonewline}
     $_
     }
 end {
