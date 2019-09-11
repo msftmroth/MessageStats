@@ -23,10 +23,14 @@ param(
     [int] $AnalyzeDay = 1
 	)
 
-$today = get-date
+$today = [DateTime]::Today
+$startdate = $today.AddDays(-$AnalyzeDay)
+$stopdate = $startdate.AddHours(24).AddMilliseconds(-1)
 $rundate = $($today.adddays(-$AnalyzeDay)).toshortdatestring()
 
-$outfile_date = ([datetime]$rundate).tostring("yyyy_MM_dd")
+Write-Host "Doing analysis for " + $rundate 
+
+$outfile_date = ([datetime]$AnalyzeDate).tostring("yyyy_MM_dd")
 $outfile = "email_stats_" + $outfile_date + ".csv"
 
 $dl_stat_file = "DL_stats.csv"
@@ -118,7 +122,7 @@ foreach ($ht in $hts){
 
 	Write-Host "`nStarted processing $ht"
 
-	get-messagetrackinglog -Server $ht -Start "$rundate" -End "$rundate 11:59:59 PM" -resultsize unlimited |
+	get-messagetrackinglog -Server $ht -Start $startdate -End $stopdate -resultsize unlimited |
 	time_pipeline |%{
 	
 	
