@@ -30,7 +30,7 @@ $rundate = $($today.adddays(-$AnalyzeDay)).toshortdatestring()
 
 Write-Host "Doing analysis for " + $rundate 
 
-$outfile_date = ([datetime]$AnalyzeDate).tostring("yyyy_MM_dd")
+$outfile_date = ([datetime]$rundate).tostring("yyyy_MM_dd")
 $outfile = "email_stats_" + $outfile_date + ".csv"
 
 $dl_stat_file = "DL_stats.csv"
